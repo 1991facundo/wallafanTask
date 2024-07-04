@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
         free: { monthly: 0, annually: 0 },
         basic: { monthly: 25, annually: 12 },
         pro: { monthly: 38, annually: 24 },
-        enterprise: { monthly: "Get in touch with us to let you know the benefits", annually: "Get in touch with us to let you know the benefits" }
+        enterprise: { monthly: "Custom", annually: "Custom" }
     };
 
     function updatePrices(planType) {
@@ -22,8 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelector(".basic .billing").innerHTML = `Billed $${prices.basic.annually * 12} per user annually`;
             document.querySelector(".pro .billing").innerHTML = `Billed $${prices.pro.annually * 12} per user annually`;
         }
-        document.querySelector(".enterprise .price").innerHTML = `${prices.enterprise[planType]}`;
-        document.querySelector(".enterprise .billing").innerHTML = '';
+        
     }
 
     function toggleActive(button) {
@@ -41,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleActive(annuallyButton);
     });
 
-    
+   
     updatePrices("annually");
     toggleActive(annuallyButton);
 });

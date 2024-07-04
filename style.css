@@ -1,3 +1,4 @@
+/* Estilos existentes */
 body {
     box-sizing: border-box;
     margin: 0;
@@ -127,15 +128,34 @@ body {
     margin: 20px 0;
     text-align: center;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+
+.plan .current-price {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
 }
 
 .plan .old-price {
     text-decoration: line-through;
     color: red;
     font-size: 14px;
-    margin-right: 5px;
+    position: absolute;
+    top: -15px;  
+    right: 25px;  
+    background-color: #f8d7da;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.plan .billing-period {
+    font-size: 14px;
+    margin-left: 5px;
+    display: inline-block;
 }
 
 .plan .billing {
@@ -193,7 +213,68 @@ body {
     position: relative;
 }
 
-
 .enterprise-message {
     font-size: 14px !important; 
+}
+
+.price-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos responsivos */
+@media (max-width: 920px) {
+    #prices {
+        flex-direction: column;
+        align-items: center;
+    }
+    .plan {
+        width: 90%;
+        min-height: 100px;
+        margin: 10px 0;
+        padding: 20px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .plan .description,
+    .plan .btn,
+    .plan .billing,
+    .most-popular,
+    .billing-period,
+    .enterprise-message {
+        display: none;
+    }
+    .plan .type {
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+    }
+    .plan .shape {
+        margin-right: 10px;
+    }
+    .plan .title {
+        font-size: 18px;
+    }
+    .plan .price {
+        margin: 0;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        width: auto;
+        position: static;
+    }
+    .plan .current-price {
+        font-size: 20px;
+        display: inline;
+    }
+    .plan .old-price {
+        font-size: 14px;
+        text-decoration: line-through;
+        color: red;
+        margin-left: 10px;
+        position: static;
+        background-color: transparent;
+        padding: 0;
+    }
 }
